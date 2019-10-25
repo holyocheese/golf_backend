@@ -1,0 +1,128 @@
+spring:
+  redis:
+    host: 127.0.0.1
+    port: 6379
+    timeout: 20000
+    pool:
+      maxIdle: 300
+      minIdle: 100
+      max-active: 200
+      max-wait: 20000
+  #zipkin:
+    #base-url: http://localhost:5001
+  datasource:
+    type: com.alibaba.druid.pool.DruidDataSource
+    platform: mysql
+    url: jdbc:mysql://localhost:3306/hotel_base_pro?useUnicode=true&characterEncoding=UTF-8
+    username: root
+    password: 123456
+#    url: jdbc:mysql://localhost:30309/hotel_base_pro?useUnicode=true&characterEncoding=UTF-8
+#    username: root
+#    password: 123456
+   ###Redis (RedisConfiguration)
+  jackson:
+    date-format: yyyy-MM-dd HH:mm:ss
+    time-zone: GMT+8
+
+server:
+  port: 9091
+
+#云端认证地址
+cloud:
+  authUrl: http://yfsc-prod001.yunfanshanglv.com:7001/api/authen/auth
+
+eureka:
+  client:
+    serviceUrl:
+      defaultZone: http://localhost:9000/eureka/
+
+gate:
+  client:
+    clientId: hotel-service-nw
+    secret: test
+
+zuul:
+    host:
+        connect-timeout-millis: 10000
+        socket-timeout-millis: 60000
+ribbon:
+  ReadTimeout: 60000
+  ConnectTimeout: 60000
+#oss图片服务器地址
+pic:
+  domain: http://media.vry360.com
+
+
+#####################################################################################################
+#短信平台服务方,提供如下两种方式，阿里云或南方
+sms:
+  provider: aliyun_sms
+# provider: nw_sms
+#阿里云相关配置 begin
+  aliyun:
+    defaultSignName: 南网商旅通
+    accessKeyId: LTAI5SfkAqoVjiqQ
+    accessKeySecret: YUaJ6IJZ8nUEwmvBcrBBIo9ynCGyxH
+    #验证码模板
+    authCodeTemplate: SMS_136392324
+#阿里云相关配置 end
+#南网短信相关配置 begin
+  nw:
+    name: test
+    password: 123456
+    cmhost: 192.168.0.20
+    cmport: 8080
+    wshost: 192.168.0.20
+    wsprot: 8090
+#南网短信相关配置 end
+#####################################################################################################
+
+#####################################################################################################
+#阿里云OSS配置
+oss:
+  endpoint: oss-cn-shenzhen.aliyuncs.com
+  accessKeyId: LTAIYh69455RbS4f
+  accessKeySecret: 0tXy9a9d2M8ZaamS1X9hOAViHjYiod
+  bucketName: bt-user
+  #文件浏览地址，由地址再加上文件名
+  showUrl:  http://person.vry360.com/
+#####################################################################################################
+
+#####################################################################################################
+#spring boot health config
+management:
+  security:
+    enabled: false
+endpoints:
+  health:
+    sensitive: false
+#####################################################################################################
+
+#####################################################################################################
+#极光推送相关配置
+jpush:
+  appKey: 8a090935d1f0a2316f07d33a
+  masterSecret: e9dda4303bc1b58242abd2cb
+#####################################################################################################
+other-img:
+  upload:
+    ### 如果是false的话就用本地的图片目录，如果是true的话，就用OSS的图片
+    method: false
+    path: /var/upload-files/
+    pre-profix: https://client.yunfanshanglv.com:8443/images/
+
+forward:
+  enabled: false
+  url: http://yfsc003.yunfanshanglv.com:8899/hotel-base-s
+  authUrl: http://yfsc003.yunfanshanglv.com:8899/api/authen/auth
+
+# 短信或者邮件推送的app签名,伊利和南网分别设置不同的签名
+signName: 商旅通
+
+  AppKey   8a090935d1f0a2316f07d33a
+masterKey: e9dda4303bc1b58242abd2cb
+
+financeSystem:
+  webservices:
+    username: ADD6716008F21E6649BBCCC231F32532D4ED67930409E65C34E6390B2849B619
+    password: E1D44AB424F7C9FF3D2F735E9E100C7334FC6E828C4253C5083861BE6DC2C88C
