@@ -3,40 +3,71 @@ package com.golf.dao.entity;
 import java.util.Date;
 import javax.persistence.*;
 
-@Table(name = "base_group_member")
-public class BaseGroupMember {
+@Table(name = "base_group_type")
+public class GroupType {
     @Id
     private Integer id;
 
-    @Column(name = "group_id")
-    private String groupId;
+    /**
+     * 编码
+     */
+    private String code;
 
-    @Column(name = "user_id")
-    private String userId;
+    /**
+     * 类型名称
+     */
+    private String name;
 
+    /**
+     * 描述
+     */
     private String description;
 
+    /**
+     * 创建时间
+     */
     @Column(name = "crt_time")
     private Date crtTime;
 
+    /**
+     * 创建人ID
+     */
     @Column(name = "crt_user")
     private String crtUser;
 
+    /**
+     * 创建人
+     */
     @Column(name = "crt_name")
     private String crtName;
 
+    /**
+     * 创建主机
+     */
     @Column(name = "crt_host")
     private String crtHost;
 
+    /**
+     * 最后更新时间
+     */
     @Column(name = "upd_time")
     private Date updTime;
 
+    /**
+     * 最后更新人ID
+     */
     @Column(name = "upd_user")
     private String updUser;
 
+    /**
+     * 最后更新人
+     */
     @Column(name = "upd_name")
     private String updName;
 
+    /**
+     * 最后更新主机
+     */
     @Column(name = "upd_host")
     private String updHost;
 
@@ -71,154 +102,198 @@ public class BaseGroupMember {
     }
 
     /**
-     * @return group_id
+     * 获取编码
+     *
+     * @return code - 编码
      */
-    public String getGroupId() {
-        return groupId;
+    public String getCode() {
+        return code;
     }
 
     /**
-     * @param groupId
+     * 设置编码
+     *
+     * @param code 编码
      */
-    public void setGroupId(String groupId) {
-        this.groupId = groupId;
+    public void setCode(String code) {
+        this.code = code;
     }
 
     /**
-     * @return user_id
+     * 获取类型名称
+     *
+     * @return name - 类型名称
      */
-    public String getUserId() {
-        return userId;
+    public String getName() {
+        return name;
     }
 
     /**
-     * @param userId
+     * 设置类型名称
+     *
+     * @param name 类型名称
      */
-    public void setUserId(String userId) {
-        this.userId = userId;
+    public void setName(String name) {
+        this.name = name;
     }
 
     /**
-     * @return description
+     * 获取描述
+     *
+     * @return description - 描述
      */
     public String getDescription() {
         return description;
     }
 
     /**
-     * @param description
+     * 设置描述
+     *
+     * @param description 描述
      */
     public void setDescription(String description) {
         this.description = description;
     }
 
     /**
-     * @return crt_time
+     * 获取创建时间
+     *
+     * @return crt_time - 创建时间
      */
     public Date getCrtTime() {
         return crtTime;
     }
 
     /**
-     * @param crtTime
+     * 设置创建时间
+     *
+     * @param crtTime 创建时间
      */
     public void setCrtTime(Date crtTime) {
         this.crtTime = crtTime;
     }
 
     /**
-     * @return crt_user
+     * 获取创建人ID
+     *
+     * @return crt_user - 创建人ID
      */
     public String getCrtUser() {
         return crtUser;
     }
 
     /**
-     * @param crtUser
+     * 设置创建人ID
+     *
+     * @param crtUser 创建人ID
      */
     public void setCrtUser(String crtUser) {
         this.crtUser = crtUser;
     }
 
     /**
-     * @return crt_name
+     * 获取创建人
+     *
+     * @return crt_name - 创建人
      */
     public String getCrtName() {
         return crtName;
     }
 
     /**
-     * @param crtName
+     * 设置创建人
+     *
+     * @param crtName 创建人
      */
     public void setCrtName(String crtName) {
         this.crtName = crtName;
     }
 
     /**
-     * @return crt_host
+     * 获取创建主机
+     *
+     * @return crt_host - 创建主机
      */
     public String getCrtHost() {
         return crtHost;
     }
 
     /**
-     * @param crtHost
+     * 设置创建主机
+     *
+     * @param crtHost 创建主机
      */
     public void setCrtHost(String crtHost) {
         this.crtHost = crtHost;
     }
 
     /**
-     * @return upd_time
+     * 获取最后更新时间
+     *
+     * @return upd_time - 最后更新时间
      */
     public Date getUpdTime() {
         return updTime;
     }
 
     /**
-     * @param updTime
+     * 设置最后更新时间
+     *
+     * @param updTime 最后更新时间
      */
     public void setUpdTime(Date updTime) {
         this.updTime = updTime;
     }
 
     /**
-     * @return upd_user
+     * 获取最后更新人ID
+     *
+     * @return upd_user - 最后更新人ID
      */
     public String getUpdUser() {
         return updUser;
     }
 
     /**
-     * @param updUser
+     * 设置最后更新人ID
+     *
+     * @param updUser 最后更新人ID
      */
     public void setUpdUser(String updUser) {
         this.updUser = updUser;
     }
 
     /**
-     * @return upd_name
+     * 获取最后更新人
+     *
+     * @return upd_name - 最后更新人
      */
     public String getUpdName() {
         return updName;
     }
 
     /**
-     * @param updName
+     * 设置最后更新人
+     *
+     * @param updName 最后更新人
      */
     public void setUpdName(String updName) {
         this.updName = updName;
     }
 
     /**
-     * @return upd_host
+     * 获取最后更新主机
+     *
+     * @return upd_host - 最后更新主机
      */
     public String getUpdHost() {
         return updHost;
     }
 
     /**
-     * @param updHost
+     * 设置最后更新主机
+     *
+     * @param updHost 最后更新主机
      */
     public void setUpdHost(String updHost) {
         this.updHost = updHost;

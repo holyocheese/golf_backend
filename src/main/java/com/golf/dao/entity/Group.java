@@ -3,23 +3,48 @@ package com.golf.dao.entity;
 import java.util.Date;
 import javax.persistence.*;
 
-@Table(name = "base_group_type")
-public class BaseGroupType {
+@Table(name = "base_group")
+public class Group {
+    /**
+     * 角色ID
+     */
     @Id
     private Integer id;
 
     /**
-     * 编码
+     * 角色编码
      */
     private String code;
 
     /**
-     * 类型名称
+     * 角色名称
      */
     private String name;
 
     /**
-     * 描述
+     * 上级节点
+     */
+    @Column(name = "parent_id")
+    private Integer parentId;
+
+    /**
+     * 树状关系
+     */
+    private String path;
+
+    /**
+     * 类型
+     */
+    private String type;
+
+    /**
+     * 角色组类型
+     */
+    @Column(name = "group_type")
+    private Integer groupType;
+
+    /**
+     * 组织描述
      */
     private String description;
 
@@ -30,44 +55,32 @@ public class BaseGroupType {
     private Date crtTime;
 
     /**
-     * 创建人ID
+     * 创建用户
      */
     @Column(name = "crt_user")
     private String crtUser;
 
-    /**
-     * 创建人
-     */
     @Column(name = "crt_name")
     private String crtName;
 
-    /**
-     * 创建主机
-     */
     @Column(name = "crt_host")
     private String crtHost;
 
     /**
-     * 最后更新时间
+     * 更新时间
      */
     @Column(name = "upd_time")
     private Date updTime;
 
     /**
-     * 最后更新人ID
+     * 更新用户
      */
     @Column(name = "upd_user")
     private String updUser;
 
-    /**
-     * 最后更新人
-     */
     @Column(name = "upd_name")
     private String updName;
 
-    /**
-     * 最后更新主机
-     */
     @Column(name = "upd_host")
     private String updHost;
 
@@ -88,68 +101,144 @@ public class BaseGroupType {
     private String attr8;
 
     /**
-     * @return id
+     * 获取角色ID
+     *
+     * @return id - 角色ID
      */
     public Integer getId() {
         return id;
     }
 
     /**
-     * @param id
+     * 设置角色ID
+     *
+     * @param id 角色ID
      */
     public void setId(Integer id) {
         this.id = id;
     }
 
     /**
-     * 获取编码
+     * 获取角色编码
      *
-     * @return code - 编码
+     * @return code - 角色编码
      */
     public String getCode() {
         return code;
     }
 
     /**
-     * 设置编码
+     * 设置角色编码
      *
-     * @param code 编码
+     * @param code 角色编码
      */
     public void setCode(String code) {
         this.code = code;
     }
 
     /**
-     * 获取类型名称
+     * 获取角色名称
      *
-     * @return name - 类型名称
+     * @return name - 角色名称
      */
     public String getName() {
         return name;
     }
 
     /**
-     * 设置类型名称
+     * 设置角色名称
      *
-     * @param name 类型名称
+     * @param name 角色名称
      */
     public void setName(String name) {
         this.name = name;
     }
 
     /**
-     * 获取描述
+     * 获取上级节点
      *
-     * @return description - 描述
+     * @return parent_id - 上级节点
+     */
+    public Integer getParentId() {
+        return parentId;
+    }
+
+    /**
+     * 设置上级节点
+     *
+     * @param parentId 上级节点
+     */
+    public void setParentId(Integer parentId) {
+        this.parentId = parentId;
+    }
+
+    /**
+     * 获取树状关系
+     *
+     * @return path - 树状关系
+     */
+    public String getPath() {
+        return path;
+    }
+
+    /**
+     * 设置树状关系
+     *
+     * @param path 树状关系
+     */
+    public void setPath(String path) {
+        this.path = path;
+    }
+
+    /**
+     * 获取类型
+     *
+     * @return type - 类型
+     */
+    public String getType() {
+        return type;
+    }
+
+    /**
+     * 设置类型
+     *
+     * @param type 类型
+     */
+    public void setType(String type) {
+        this.type = type;
+    }
+
+    /**
+     * 获取角色组类型
+     *
+     * @return group_type - 角色组类型
+     */
+    public Integer getGroupType() {
+        return groupType;
+    }
+
+    /**
+     * 设置角色组类型
+     *
+     * @param groupType 角色组类型
+     */
+    public void setGroupType(Integer groupType) {
+        this.groupType = groupType;
+    }
+
+    /**
+     * 获取组织描述
+     *
+     * @return description - 组织描述
      */
     public String getDescription() {
         return description;
     }
 
     /**
-     * 设置描述
+     * 设置组织描述
      *
-     * @param description 描述
+     * @param description 组织描述
      */
     public void setDescription(String description) {
         this.description = description;
@@ -174,126 +263,110 @@ public class BaseGroupType {
     }
 
     /**
-     * 获取创建人ID
+     * 获取创建用户
      *
-     * @return crt_user - 创建人ID
+     * @return crt_user - 创建用户
      */
     public String getCrtUser() {
         return crtUser;
     }
 
     /**
-     * 设置创建人ID
+     * 设置创建用户
      *
-     * @param crtUser 创建人ID
+     * @param crtUser 创建用户
      */
     public void setCrtUser(String crtUser) {
         this.crtUser = crtUser;
     }
 
     /**
-     * 获取创建人
-     *
-     * @return crt_name - 创建人
+     * @return crt_name
      */
     public String getCrtName() {
         return crtName;
     }
 
     /**
-     * 设置创建人
-     *
-     * @param crtName 创建人
+     * @param crtName
      */
     public void setCrtName(String crtName) {
         this.crtName = crtName;
     }
 
     /**
-     * 获取创建主机
-     *
-     * @return crt_host - 创建主机
+     * @return crt_host
      */
     public String getCrtHost() {
         return crtHost;
     }
 
     /**
-     * 设置创建主机
-     *
-     * @param crtHost 创建主机
+     * @param crtHost
      */
     public void setCrtHost(String crtHost) {
         this.crtHost = crtHost;
     }
 
     /**
-     * 获取最后更新时间
+     * 获取更新时间
      *
-     * @return upd_time - 最后更新时间
+     * @return upd_time - 更新时间
      */
     public Date getUpdTime() {
         return updTime;
     }
 
     /**
-     * 设置最后更新时间
+     * 设置更新时间
      *
-     * @param updTime 最后更新时间
+     * @param updTime 更新时间
      */
     public void setUpdTime(Date updTime) {
         this.updTime = updTime;
     }
 
     /**
-     * 获取最后更新人ID
+     * 获取更新用户
      *
-     * @return upd_user - 最后更新人ID
+     * @return upd_user - 更新用户
      */
     public String getUpdUser() {
         return updUser;
     }
 
     /**
-     * 设置最后更新人ID
+     * 设置更新用户
      *
-     * @param updUser 最后更新人ID
+     * @param updUser 更新用户
      */
     public void setUpdUser(String updUser) {
         this.updUser = updUser;
     }
 
     /**
-     * 获取最后更新人
-     *
-     * @return upd_name - 最后更新人
+     * @return upd_name
      */
     public String getUpdName() {
         return updName;
     }
 
     /**
-     * 设置最后更新人
-     *
-     * @param updName 最后更新人
+     * @param updName
      */
     public void setUpdName(String updName) {
         this.updName = updName;
     }
 
     /**
-     * 获取最后更新主机
-     *
-     * @return upd_host - 最后更新主机
+     * @return upd_host
      */
     public String getUpdHost() {
         return updHost;
     }
 
     /**
-     * 设置最后更新主机
-     *
-     * @param updHost 最后更新主机
+     * @param updHost
      */
     public void setUpdHost(String updHost) {
         this.updHost = updHost;

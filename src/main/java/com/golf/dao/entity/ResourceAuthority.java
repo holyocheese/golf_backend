@@ -4,7 +4,7 @@ import java.util.Date;
 import javax.persistence.*;
 
 @Table(name = "base_resource_authority")
-public class BaseResourceAuthority {
+public class ResourceAuthority {
     @Id
     private Integer id;
 
@@ -66,6 +66,14 @@ public class BaseResourceAuthority {
     private String attr7;
 
     private String attr8;
+    
+    public ResourceAuthority(String authorityType, String resourceType) {
+        this.authorityType = authorityType;
+        this.resourceType = resourceType;
+    }
+
+    public ResourceAuthority() {
+    }
 
     /**
      * @return id

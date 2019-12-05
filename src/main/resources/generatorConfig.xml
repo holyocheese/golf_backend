@@ -28,15 +28,15 @@
         <javaClientGenerator targetPackage="${targetMapperPackage}" targetProject="${targetJavaProject}"
                              type="XMLMAPPER"/>
 
-         <table tableName="auth_client" domainObjectName="Client"></table>
+        <!--  <table tableName="auth_client" domainObjectName="Client"></table> -->
         <!-- <table tableName="auth_client_service" domainObjectName="AuthClientService"></table> -->
         <!-- <table tableName="base_element" domainObjectName="Element"></table> -->
-        <!-- <table tableName="base_group" domainObjectName="BaseGroup"></table>
-        <table tableName="base_group_leader" domainObjectName="BaseGroupLeader"></table>
-        <table tableName="base_group_member" domainObjectName="BaseGroupMember"></table>
-        <table tableName="base_group_type" domainObjectName="BaseGroupType"></table> -->
+        <!-- <table tableName="base_group" domainObjectName="Group"></table> -->
+        <!-- <table tableName="base_group_leader" domainObjectName="BaseGroupLeader"></table>
+        <table tableName="base_group_member" domainObjectName="BaseGroupMember"></table> -->
+        <!-- <table tableName="base_group_type" domainObjectName="GroupType"></table> -->
         <!-- <table tableName="base_menu" domainObjectName="Menu"></table> -->
-        <!-- <table tableName="base_resource_authority" domainObjectName="BaseResourceAuthority"></table> -->
+        <table tableName="base_resource_authority" domainObjectName="ResourceAuthority"></table>
         <!-- <table tableName="base_user" domainObjectName="User"></table> -->
         
         
