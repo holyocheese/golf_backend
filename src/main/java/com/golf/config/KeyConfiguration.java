@@ -4,7 +4,7 @@ import org.springframework.beans.factory.annotation.Value;
 import org.springframework.context.annotation.Configuration;
 
 @Configuration
-//@Data
+
 public class KeyConfiguration {
     @Value("${jwt.rsa-secret}")
     private String userSecret;

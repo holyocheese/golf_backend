@@ -1,7 +1,6 @@
 logging:
     level:
-#        tk.mybatis: DEBUG
-        com.bt.admin.security.admin: DEBUG
+        com.golf: DEBUG
 spring:
   application:
     name: golf-base
@@ -43,9 +42,9 @@ sample:
     enabled: false
 
 mybatis:
-    basepackage: com.bt.admin.security.admin.mapper
-    xmlLocation: classpath:mapper/**/*.xml
-    mapper-locations: "classpath*:mapper/*.xml"
+    basepackage: com.golf.dao
+    xmlLocation: classpath:golf/mapper/*.xml
+    mapper-locations: classpath:golf/mapper/*.xml
 
 server:
     port: 8762
@@ -109,7 +108,7 @@ auth:
   user:
     token-header: Authorization
   client:
-    id: bt-admin
+    id: bt-auth
     secret: 123456
     token-header: x-client-token
     

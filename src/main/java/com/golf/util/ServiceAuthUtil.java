@@ -3,18 +3,22 @@ package com.golf.util;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.context.annotation.Configuration;
+import org.springframework.scheduling.annotation.EnableScheduling;
 import org.springframework.scheduling.annotation.Scheduled;
 
-import com.golf.common.BaseResponse;
-import com.golf.common.ObjectRestResponse;
 import com.golf.common.ServiceAuthConfig;
 import com.golf.common.exception.ClientTokenException;
 import com.golf.config.IJWTInfo;
 import com.golf.service.AuthClientService;
 
+import groovy.util.logging.Slf4j;
 import io.jsonwebtoken.ExpiredJwtException;
 import io.jsonwebtoken.SignatureException;
 
+@Configuration
+@Slf4j
+@EnableScheduling
 public class ServiceAuthUtil {
 
 	@Autowired

@@ -1,5 +1,7 @@
 package com.golf.util;
 
+import java.security.PrivateKey;
+
 import org.joda.time.DateTime;
 
 import com.golf.common.CommonConstants;

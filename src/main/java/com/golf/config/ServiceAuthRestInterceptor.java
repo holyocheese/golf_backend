@@ -36,7 +36,6 @@ public class ServiceAuthRestInterceptor extends HandlerInterceptorAdapter {
         if(annotation!=null) {
             return super.preHandle(request, response, handler);
         }
-
         String token = request.getHeader(serviceAuthConfig.getTokenHeader());
         IJWTInfo infoFromToken = serviceAuthUtil.getInfoFromToken(token);
         String uniqueName = infoFromToken.getUniqueName();
