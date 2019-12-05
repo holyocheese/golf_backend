@@ -4,8 +4,8 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Component;
 
-import com.golf.config.IJWTInfo;
 import com.golf.config.KeyConfiguration;
+import com.golf.model.authen.IJWTInfo;
 
 @Component
 public class JwtTokenUtil {

@@ -1,6 +1,6 @@
 package com.golf.service;
 
-import com.golf.common.JwtAuthenticationRequest;
+import com.golf.model.request.JwtAuthenticationRequest;
 
 public interface AuthService {
 

@@ -3,7 +3,7 @@ package com.golf.config;
 import java.util.HashMap;
 import java.util.Map;
 
-import com.golf.common.CommonConstants;
+import com.golf.constant.CommonConstants;
 import com.golf.util.StringHelper;
 
 

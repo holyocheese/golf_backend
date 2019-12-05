@@ -1,12 +1,10 @@
 package com.golf.util;
 
-import java.security.PrivateKey;
-
 import org.joda.time.DateTime;
 
-import com.golf.common.CommonConstants;
-import com.golf.config.IJWTInfo;
-import com.golf.config.JWTInfo;
+import com.golf.constant.CommonConstants;
+import com.golf.model.authen.IJWTInfo;
+import com.golf.model.authen.JWTInfo;
 
 import io.jsonwebtoken.Claims;
 import io.jsonwebtoken.Jws;

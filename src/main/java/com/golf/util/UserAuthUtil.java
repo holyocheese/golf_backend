@@ -6,8 +6,8 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Configuration;
 
 import com.golf.common.exception.UserTokenException;
-import com.golf.config.JWTInfo;
-import com.golf.config.UserAuthConfig;
+import com.golf.model.authen.JWTInfo;
+import com.golf.model.authen.UserAuthConfig;
 
 import io.jsonwebtoken.ExpiredJwtException;
 import io.jsonwebtoken.SignatureException;

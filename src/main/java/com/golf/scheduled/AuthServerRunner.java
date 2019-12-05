@@ -1,4 +1,4 @@
-package com.golf.config;
+package com.golf.scheduled;
 
 import java.util.Map;
 
@@ -7,6 +7,7 @@ import org.springframework.boot.CommandLineRunner;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.data.redis.core.RedisTemplate;
 
+import com.golf.config.KeyConfiguration;
 import com.golf.util.RsaKeyHelper;
 
 @Configuration

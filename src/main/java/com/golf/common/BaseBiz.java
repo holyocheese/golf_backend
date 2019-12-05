@@ -1,17 +1,19 @@
 package com.golf.common;
 
-import com.github.pagehelper.Page;
-import com.github.pagehelper.PageHelper;
-import com.golf.util.EntityUtils;
-import com.golf.util.Query;
-
-import org.springframework.beans.factory.annotation.Autowired;
-import tk.mybatis.mapper.common.Mapper;
-import tk.mybatis.mapper.entity.Example;
-
 import java.lang.reflect.ParameterizedType;
 import java.util.List;
 import java.util.Map;
+
+import org.springframework.beans.factory.annotation.Autowired;
+
+import com.github.pagehelper.Page;
+import com.github.pagehelper.PageHelper;
+import com.golf.model.response.TableResultResponse;
+import com.golf.util.EntityUtils;
+import com.golf.util.Query;
+
+import tk.mybatis.mapper.common.Mapper;
+import tk.mybatis.mapper.entity.Example;
 
 public abstract class BaseBiz<M extends Mapper<T>, T> {
     @Autowired

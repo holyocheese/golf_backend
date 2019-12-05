@@ -5,6 +5,7 @@ import java.util.List;
 import org.apache.ibatis.annotations.Param;
 
 import com.golf.dao.entity.User;
+
 import tk.mybatis.mapper.common.Mapper;
 
 public interface UserMapper extends Mapper<User> {

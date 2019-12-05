@@ -1,6 +1,6 @@
 package com.golf.common.exception;
 
-import com.golf.common.CommonConstants;
+import com.golf.constant.CommonConstants;
 
 public class UserTokenException extends BaseException {
     public UserTokenException(String message) {

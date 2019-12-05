@@ -8,12 +8,12 @@ import org.springframework.web.bind.annotation.ControllerAdvice;
 import org.springframework.web.bind.annotation.ExceptionHandler;
 import org.springframework.web.bind.annotation.ResponseBody;
 
-import com.golf.common.BaseResponse;
-import com.golf.common.CommonConstants;
 import com.golf.common.exception.BaseException;
 import com.golf.common.exception.ClientTokenException;
 import com.golf.common.exception.UserInvalidException;
 import com.golf.common.exception.UserTokenException;
+import com.golf.constant.CommonConstants;
+import com.golf.model.response.BaseResponse;
 
 
 @ControllerAdvice("com.golf")

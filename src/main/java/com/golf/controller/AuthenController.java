@@ -6,9 +6,9 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.golf.common.JwtAuthenticationRequest;
-import com.golf.common.ObjectRestResponse;
 import com.golf.common.exception.UserInvalidException;
+import com.golf.model.request.JwtAuthenticationRequest;
+import com.golf.model.response.ObjectRestResponse;
 import com.golf.service.AuthService;
 
 

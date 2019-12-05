@@ -3,7 +3,8 @@ package com.golf.config;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 
-import com.golf.common.ServiceAuthConfig;
+import com.golf.model.authen.ServiceAuthConfig;
+import com.golf.model.authen.UserAuthConfig;
 
 @Configuration
 public class AutoConfiguration {

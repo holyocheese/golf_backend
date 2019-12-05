@@ -1,4 +1,4 @@
-package com.golf.config;
+package com.golf.model.authen;
 
 import javax.servlet.http.HttpServletRequest;
 

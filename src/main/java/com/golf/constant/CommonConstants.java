@@ -1,4 +1,4 @@
-package com.golf.common;
+package com.golf.constant;
 
 public class CommonConstants {
 

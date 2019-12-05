@@ -1,4 +1,4 @@
-package com.golf.common;
+package com.golf.model.response;
 
 import java.util.List;
 public class TableResultResponse<T> extends BaseResponse {

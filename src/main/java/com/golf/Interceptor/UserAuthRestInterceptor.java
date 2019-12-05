@@ -1,5 +1,8 @@
 package com.golf.Interceptor;
 
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -7,12 +10,9 @@ import org.springframework.web.method.HandlerMethod;
 import org.springframework.web.servlet.handler.HandlerInterceptorAdapter;
 
 import com.golf.config.BaseContextHandler;
-import com.golf.config.IJWTInfo;
 import com.golf.dao.entity.UserConfiguration;
+import com.golf.model.authen.IJWTInfo;
 import com.golf.util.JwtTokenUtil;
-
-import javax.servlet.http.HttpServletRequest;
-import javax.servlet.http.HttpServletResponse;
 
 public class UserAuthRestInterceptor extends HandlerInterceptorAdapter {
     private Logger logger = LoggerFactory.getLogger(UserAuthRestInterceptor.class);

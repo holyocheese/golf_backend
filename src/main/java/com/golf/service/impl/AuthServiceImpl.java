@@ -5,9 +5,9 @@ import org.springframework.stereotype.Service;
 import org.springframework.util.StringUtils;
 
 import com.golf.base.biz.UserBiz;
-import com.golf.common.JwtAuthenticationRequest;
 import com.golf.common.exception.UserInvalidException;
-import com.golf.config.JWTInfo;
+import com.golf.model.authen.JWTInfo;
+import com.golf.model.request.JwtAuthenticationRequest;
 import com.golf.model.vo.UserInfo;
 import com.golf.service.AuthService;
 import com.golf.service.PermissionService;

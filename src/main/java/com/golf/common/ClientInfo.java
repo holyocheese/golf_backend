@@ -1,6 +1,6 @@
 package com.golf.common;
 
-import com.golf.config.IJWTInfo;
+import com.golf.model.authen.IJWTInfo;
 
 public class ClientInfo implements IJWTInfo {
     String clientId;

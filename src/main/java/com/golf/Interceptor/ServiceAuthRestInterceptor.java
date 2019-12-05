@@ -1,4 +1,4 @@
-package com.golf.config;
+package com.golf.Interceptor;
 
 import java.util.List;
 
@@ -10,8 +10,9 @@ import org.springframework.web.method.HandlerMethod;
 import org.springframework.web.servlet.handler.HandlerInterceptorAdapter;
 
 import com.golf.anno.IgnoreClientToken;
-import com.golf.common.ServiceAuthConfig;
 import com.golf.common.exception.ClientForbiddenException;
+import com.golf.model.authen.IJWTInfo;
+import com.golf.model.authen.ServiceAuthConfig;
 import com.golf.util.ServiceAuthUtil;
 
 @SuppressWarnings("ALL")

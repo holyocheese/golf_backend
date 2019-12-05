@@ -1,4 +1,4 @@
-package com.golf.common;
+package com.golf.model.response;
 
 public class ObjectRestResponse<T> extends BaseResponse {
 

@@ -14,6 +14,8 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 
 import com.golf.config.BaseContextHandler;
+import com.golf.model.response.ObjectRestResponse;
+import com.golf.model.response.TableResultResponse;
 import com.golf.util.Query;
 
 import io.swagger.annotations.ApiOperation;

@@ -1,4 +1,4 @@
-package com.golf.common;
+package com.golf.constant;
 
 public class AdminCommonConstant {
     public final static int ROOT = -1;

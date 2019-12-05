@@ -8,7 +8,7 @@ import org.springframework.transaction.annotation.Transactional;
 import com.ace.cache.annotation.Cache;
 import com.ace.cache.annotation.CacheClear;
 import com.golf.common.BaseBiz;
-import com.golf.common.UserConstant;
+import com.golf.constant.UserConstant;
 import com.golf.dao.entity.User;
 import com.golf.dao.mapper.UserMapper;
 

@@ -1,8 +1,22 @@
 package com.golf.base.biz;
 
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.HashMap;
+import java.util.HashSet;
+import java.util.List;
+import java.util.Map;
+import java.util.Set;
+
+import org.springframework.beans.BeanUtils;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
+import org.springframework.util.StringUtils;
+
 import com.ace.cache.annotation.CacheClear;
-import com.golf.common.AdminCommonConstant;
 import com.golf.common.BaseBiz;
+import com.golf.constant.AdminCommonConstant;
 import com.golf.dao.entity.Group;
 import com.golf.dao.entity.GroupUsers;
 import com.golf.dao.entity.Menu;
@@ -12,14 +26,6 @@ import com.golf.dao.mapper.MenuMapper;
 import com.golf.dao.mapper.ResourceAuthorityMapper;
 import com.golf.dao.mapper.UserMapper;
 import com.golf.model.vo.AuthorityMenuTree;
-
-import org.springframework.beans.BeanUtils;
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.stereotype.Service;
-import org.springframework.transaction.annotation.Transactional;
-import org.springframework.util.StringUtils;
-
-import java.util.*;
 
 /**
  * ${DESCRIPTION}

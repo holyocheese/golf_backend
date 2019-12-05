@@ -7,9 +7,9 @@ import org.springframework.context.annotation.Configuration;
 import org.springframework.scheduling.annotation.EnableScheduling;
 import org.springframework.scheduling.annotation.Scheduled;
 
-import com.golf.common.ServiceAuthConfig;
 import com.golf.common.exception.ClientTokenException;
-import com.golf.config.IJWTInfo;
+import com.golf.model.authen.IJWTInfo;
+import com.golf.model.authen.ServiceAuthConfig;
 import com.golf.service.AuthClientService;
 
 import groovy.util.logging.Slf4j;

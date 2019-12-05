@@ -1,4 +1,4 @@
-package com.golf.config;
+package com.golf.scheduled;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -7,11 +7,10 @@ import org.springframework.boot.CommandLineRunner;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.scheduling.annotation.Scheduled;
 
-import com.golf.common.BaseResponse;
-import com.golf.common.ServiceAuthConfig;
+import com.golf.config.KeyConfiguration;
+import com.golf.model.authen.ServiceAuthConfig;
+import com.golf.model.authen.UserAuthConfig;
 import com.golf.service.AuthClientService;
-
-import groovy.util.logging.Slf4j;
 
 @Configuration
 public class AuthClientRunner implements CommandLineRunner {
