@@ -4,7 +4,7 @@ import java.util.Date;
 import javax.persistence.*;
 
 @Table(name = "auth_client")
-public class AuthClient {
+public class Client {
     @Id
     private Integer id;
 

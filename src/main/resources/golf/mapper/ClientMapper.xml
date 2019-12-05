@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
-<mapper namespace="com.golf.dao.mapper.AuthClientMapper" >
-  <resultMap id="BaseResultMap" type="com.golf.dao.entity.AuthClient" >
+<mapper namespace="com.golf.dao.mapper.ClientMapper" >
+  <resultMap id="BaseResultMap" type="com.golf.dao.entity.Client" >
     <!--
       WARNING - @mbg.generated
     -->
@@ -28,4 +28,24 @@
     <result column="attr7" property="attr7" jdbcType="VARCHAR" />
     <result column="attr8" property="attr8" jdbcType="VARCHAR" />
   </resultMap>
+  
+   <select id="selectAllowedClient" resultType="java.lang.String">
+    SELECT
+        client.CODE
+      FROM
+          auth_client client
+      INNER JOIN auth_client_service gcs ON gcs.client_id = client.id
+    WHERE
+        gcs.service_id = #{serviceId}
+  </select>
+
+  <select id="selectAuthorityServiceInfo" resultMap="BaseResultMap">
+    SELECT
+    client.*
+    FROM
+    auth_client client
+    INNER JOIN auth_client_service gcs ON gcs.service_id = client.id
+    WHERE
+    gcs.client_id = #{clientId}
+  </select>
 </mapper>

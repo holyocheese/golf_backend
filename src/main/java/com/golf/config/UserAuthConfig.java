@@ -3,7 +3,9 @@ package com.golf.config;
 import javax.servlet.http.HttpServletRequest;
 
 import org.springframework.beans.factory.annotation.Value;
+import org.springframework.stereotype.Component;
 
+@Component
 public class UserAuthConfig {
 	
 	@Value("${auth.user.token-header}")
@@ -14,7 +16,7 @@ public class UserAuthConfig {
     public String getTokenHeader() {
         return tokenHeader;
     }
-
+ 
     public void setTokenHeader(String tokenHeader) {
         this.tokenHeader = tokenHeader;
     }

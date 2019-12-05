@@ -13,6 +13,7 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 
+import com.golf.config.BaseContextHandler;
 import com.golf.util.Query;
 
 import io.swagger.annotations.ApiOperation;
@@ -75,15 +76,15 @@ public class BaseController<Biz extends BaseBiz,Entity> {
         Query query = new Query(params);
         return baseBiz.selectByQueryEqual(query);
     }
-//    public String getCurrentUserName(){
-//        return BaseContextHandler.getUsername();
-//    }
-//    
-//    public String getCurrentUserId(){
-//        return BaseContextHandler.getUserID();
-//    }
-//    
-//    public String getCurrentTenantId(){
-//        return BaseContextHandler.get("tenantId")+"";
-//    }
+    public String getCurrentUserName(){
+        return BaseContextHandler.getUsername();
+    }
+    
+    public String getCurrentUserId(){
+        return BaseContextHandler.getUserID();
+    }
+    
+    public String getCurrentTenantId(){
+        return BaseContextHandler.get("tenantId")+"";
+    }
 }

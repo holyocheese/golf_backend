@@ -1,6 +1,7 @@
 package com.golf.service.impl;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
 import org.springframework.util.StringUtils;
 
 import com.golf.base.biz.UserBiz;
@@ -12,6 +13,7 @@ import com.golf.service.AuthService;
 import com.golf.service.PermissionService;
 import com.golf.util.JwtTokenUtil;
 
+@Service
 public class AuthServiceImpl implements AuthService{
 	
 	private JwtTokenUtil jwtTokenUtil;
