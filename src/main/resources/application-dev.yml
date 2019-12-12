@@ -19,7 +19,7 @@ spring:
     time-zone: GMT+8
 
 server:
-  port: 9091
+  port: 8082
 
 
 eureka:

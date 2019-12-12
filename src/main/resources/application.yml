@@ -2,7 +2,7 @@ spring:
   application:
     name: golf-service
   profiles:
-    active: dev
+    active: test
     jackson:
         date-format: yyyy-MM-dd HH:mm:ss
         time-zone: GMT+8
@@ -43,7 +43,7 @@ mybatis:
     mapper-locations: classpath:golf/mapper/*.xml
 
 server:
-    port: 8762
+    port: 8082
 
 
 eureka:

@@ -44,13 +44,11 @@ public class AuthClientRunner implements CommandLineRunner {
     public void refreshUserPubKey() throws Exception{
     	authClientService.validate(serviceAuthConfig.getClientId(), serviceAuthConfig.getClientSecret());
     	this.userAuthConfig.setPubKeyByte(keyConfiguration.getUserPubKey()); 
-    	log.info("userAuthConfig："+this.userAuthConfig.getPubKeyByte().toString());
     }
     @Scheduled(cron = "0 0/1 * * * ?")
     public void refreshServicePubKey() throws Exception{
     	authClientService.validate(serviceAuthConfig.getClientId(), serviceAuthConfig.getClientSecret());
         this.serviceAuthConfig.setPubKeyByte(keyConfiguration.getServicePubKey());
-        log.info("userAuthConfig："+this.serviceAuthConfig.getPubKeyByte().toString());
     }
 
 }
