@@ -164,11 +164,6 @@
             <artifactId>commons-pool</artifactId>
             <version>1.5.4</version>
         </dependency>
-        <dependency>
-            <groupId>postmsg</groupId>
-            <artifactId>postmsg</artifactId>
-            <version>2.3</version>
-        </dependency>
 
         <!-- 南网短信 -->
         <!-- 阿里云 OSS-->
