@@ -131,19 +131,6 @@
             <version>1.2.4</version>
         </dependency>
 
-
-        <!-- This snapshot is obtained from github rocketmq-externals commit head:4848df8
-         after that the project was modified to spring boot 2.0.0 version which is then
-         converted into rocketmq-spring github project. We can not use the latest one, has to build
-         the own 1.0.0-snapshot as this project is based on 1.5.X of spring boot (too old)
-          The 1.x.x.RELEASE was never pushed to maven repo , even though
-          you can find it in the mavern webpage-->
-        <dependency>
-            <groupId>org.apache.rocketmq</groupId>
-            <artifactId>spring-boot-starter-rocketmq</artifactId>
-            <version>1.0.0-SNAPSHOT</version>
-        </dependency>
-
         <!--redis集成 -->
         <dependency>
             <groupId>org.springframework.boot</groupId>
