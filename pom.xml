@@ -165,21 +165,6 @@
             <version>1.5.4</version>
         </dependency>
         <dependency>
-            <groupId>com.nw.sms</groupId>
-            <artifactId>postmsg-upm</artifactId>
-            <version>2.3</version>
-        </dependency>
-        <dependency>
-            <groupId>com.nw.sms</groupId>
-            <artifactId>protobuf-java</artifactId>
-            <version>2.4.1</version>
-        </dependency>
-        <dependency>
-            <groupId>com.nw.sms</groupId>
-            <artifactId>xm-protobuf</artifactId>
-            <version>0.0.1</version>
-        </dependency>
-        <dependency>
             <groupId>postmsg</groupId>
             <artifactId>postmsg</artifactId>
             <version>2.3</version>
