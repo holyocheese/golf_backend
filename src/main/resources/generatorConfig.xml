@@ -36,8 +36,9 @@
         <table tableName="base_group_member" domainObjectName="BaseGroupMember"></table> -->
         <!-- <table tableName="base_group_type" domainObjectName="GroupType"></table> -->
         <!-- <table tableName="base_menu" domainObjectName="Menu"></table> -->
-        <table tableName="base_resource_authority" domainObjectName="ResourceAuthority"></table>
+        <!-- <table tableName="base_resource_authority" domainObjectName="ResourceAuthority"></table> -->
         <!-- <table tableName="base_user" domainObjectName="User"></table> -->
+        <table tableName="app_setting" domainObjectName="AppSetting"></table>
         
         
     </context>

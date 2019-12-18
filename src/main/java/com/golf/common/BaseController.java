@@ -1,11 +1,15 @@
 package com.golf.common;
 
+import java.io.UnsupportedEncodingException;
+import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
 
 import javax.servlet.http.HttpServletRequest;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpHeaders;
+import org.springframework.http.MediaType;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -88,5 +92,16 @@ public class BaseController<Biz extends BaseBiz,Entity> {
     
     public String getCurrentTenantId(){
         return BaseContextHandler.get("tenantId")+"";
+    }
+    
+    public HttpHeaders getDownloadHeaders(String fileName) throws UnsupportedEncodingException{
+    	HttpHeaders headers = new HttpHeaders();
+    	 headers.setContentType(MediaType.APPLICATION_OCTET_STREAM);    
+         headers.setContentDispositionFormData("attachment", fileName);
+         List<String> headList = new ArrayList<String>();
+         headList.add("Access-Control-Expose-Headers");
+         headList.add("Content-Disposition");
+         headers.setAccessControlExposeHeaders(headList);
+         return headers;
     }
 }
