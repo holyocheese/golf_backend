@@ -19,7 +19,7 @@ public class AppSettingBiz extends BaseBiz<AppSettingMapper,AppSetting>{
     
 	public AppSetting uploadApp(MultipartFile file,Integer id){
 		AppSetting as = mapper.selectByPrimaryKey(id);
-		String fileName = fileStorageService.storeFile(file, as.getName()+"_"+as.getType()+"_"+as.getVersion()+".apk");
+		String fileName = fileStorageService.storeFile(file, as.getName()+"_"+as.getType()+"_"+as.getVersion()+"_"+as.getId()+".apk");
 		as.setFileName(fileName);
 		mapper.updateByPrimaryKeySelective(as);
 		return as;

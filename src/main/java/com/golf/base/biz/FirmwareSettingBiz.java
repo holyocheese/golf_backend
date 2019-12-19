@@ -19,7 +19,7 @@ public class FirmwareSettingBiz extends BaseBiz<FirmwareSettingMapper,FirmwareSe
     
 	public FirmwareSetting uploadFirmware(MultipartFile file,Integer id){
 		FirmwareSetting as = mapper.selectByPrimaryKey(id);
-		String fileName = fileStorageService.storeFile(file, as.getName()+"_"+as.getVersion()+".apk");
+		String fileName = fileStorageService.storeFile(file, as.getName()+"_"+as.getVersion()+"_"+as.getId()+".apk");
 		as.setFileName(fileName);
 		mapper.updateByPrimaryKeySelective(as);
 		return as;
