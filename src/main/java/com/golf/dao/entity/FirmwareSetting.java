@@ -6,25 +6,20 @@ import javax.persistence.Column;
 import javax.persistence.Id;
 import javax.persistence.Table;
 
-@Table(name = "app_setting")
-public class AppSetting {
+@Table(name = "firmware_setting")
+public class FirmwareSetting {
     @Id
     private Integer id;
 
     /**
-     * APP名称
+     * 固件名称
      */
     private String name;
 
     /**
-     * 版本号
+     * 固件号
      */
     private String version;
-
-    /**
-     * 手机系统类型：1、安卓 2、IOS
-     */
-    private Integer type;
 
     @Column(name = "force_update")
     private Integer forceUpdate;
@@ -39,12 +34,6 @@ public class AppSetting {
     private String updateMessage;
 
     private String extend;
-
-    /**
-     * 生效时间,时间戳
-     */
-    @Column(name = "effective_time")
-    private Date effectiveTime;
 
     /**
      * 文件名 对应安装包名称
@@ -91,57 +80,39 @@ public class AppSetting {
     }
 
     /**
-     * 获取APP名称
+     * 获取固件名称
      *
-     * @return name - APP名称
+     * @return name - 固件名称
      */
     public String getName() {
         return name;
     }
 
     /**
-     * 设置APP名称
+     * 设置固件名称
      *
-     * @param name APP名称
+     * @param name 固件名称
      */
     public void setName(String name) {
         this.name = name;
     }
 
     /**
-     * 获取版本号
+     * 获取固件号
      *
-     * @return version - 版本号
+     * @return version - 固件号
      */
     public String getVersion() {
         return version;
     }
 
     /**
-     * 设置版本号
+     * 设置固件号
      *
-     * @param version 版本号
+     * @param version 固件号
      */
     public void setVersion(String version) {
         this.version = version;
-    }
-
-    /**
-     * 获取手机系统类型：1、安卓 2、IOS
-     *
-     * @return type - 手机系统类型：1、安卓 2、IOS
-     */
-    public Integer getType() {
-        return type;
-    }
-
-    /**
-     * 设置手机系统类型：1、安卓 2、IOS
-     *
-     * @param type 手机系统类型：1、安卓 2、IOS
-     */
-    public void setType(Integer type) {
-        this.type = type;
     }
 
     /**
@@ -202,24 +173,6 @@ public class AppSetting {
      */
     public void setExtend(String extend) {
         this.extend = extend;
-    }
-
-    /**
-     * 获取生效时间,时间戳
-     *
-     * @return effective_time - 生效时间,时间戳
-     */
-    public Date getEffectiveTime() {
-        return effectiveTime;
-    }
-
-    /**
-     * 设置生效时间,时间戳
-     *
-     * @param effectiveTime 生效时间,时间戳
-     */
-    public void setEffectiveTime(Date effectiveTime) {
-        this.effectiveTime = effectiveTime;
     }
 
     /**

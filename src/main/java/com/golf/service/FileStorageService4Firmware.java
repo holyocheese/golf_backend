@@ -19,13 +19,13 @@ import com.golf.common.exception.MyFileNotFoundException;
 import com.golf.config.FileStorageProperties;
 
 @Service
-public class FileStorageService {
+public class FileStorageService4Firmware {
 
     private final Path fileStorageLocation;
 
     @Autowired
-    public FileStorageService(FileStorageProperties fileStorageProperties) {
-        this.fileStorageLocation = Paths.get(fileStorageProperties.getAppPath())
+    public FileStorageService4Firmware(FileStorageProperties fileStorageProperties) {
+        this.fileStorageLocation = Paths.get(fileStorageProperties.getFirmwarePath())
                 .toAbsolutePath().normalize();
 
         try {

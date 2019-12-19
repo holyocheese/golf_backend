@@ -3,9 +3,6 @@ package com.golf.controller;
 import java.util.ArrayList;
 import java.util.List;
 
-import io.swagger.annotations.*;
-import springfox.documentation.annotations.ApiIgnore;
-
 import org.apache.commons.lang3.StringUtils;
 import org.springframework.beans.BeanUtils;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -28,6 +25,7 @@ import com.golf.model.vo.GroupTree;
 import com.golf.service.GroupService;
 import com.golf.util.TreeUtil;
 
+import springfox.documentation.annotations.ApiIgnore;
 import tk.mybatis.mapper.entity.Example;
 
 @IgnoreClientToken
