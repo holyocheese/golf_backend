@@ -15,6 +15,8 @@ import com.golf.model.vo.PermissionInfo;
 import com.golf.model.vo.UserInfo;
 import com.golf.service.PermissionService;
 
+import springfox.documentation.annotations.ApiIgnore;
+@ApiIgnore
 public class UserRest {
 
 	@Autowired

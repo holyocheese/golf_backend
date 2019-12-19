@@ -24,9 +24,12 @@ import com.golf.service.GroupService;
 import com.golf.service.PermissionService;
 import com.golf.util.Query;
 
+import springfox.documentation.annotations.ApiIgnore;
+
 @IgnoreClientToken
 @RestController
 @RequestMapping("user")
+@ApiIgnore
 public class UserController extends BaseController<UserBiz,User>{
 	@Autowired
     private PermissionService permissionService;

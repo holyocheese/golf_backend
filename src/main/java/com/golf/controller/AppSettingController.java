@@ -12,15 +12,22 @@ import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.multipart.MultipartFile;
 
 import com.golf.base.biz.AppSettingBiz;
 import com.golf.common.BaseController;
 import com.golf.dao.entity.AppSetting;
+import com.golf.model.response.ObjectRestResponse;
 import com.golf.service.FileStorageService;
+
+import io.swagger.annotations.Api;
 
 @RestController
 @RequestMapping("appSetting")
+@Api(value="app版本相关接口",tags={"app版本相关接口"})
 public class AppSettingController extends BaseController<AppSettingBiz,AppSetting>{
 	
 	@Value("${path.appPath}")
@@ -28,15 +35,20 @@ public class AppSettingController extends BaseController<AppSettingBiz,AppSettin
 	
 	@Autowired
     private FileStorageService fileStorageService;
+	
+	@Autowired
+    private AppSettingBiz appSettingBiz;
+	
 
-//	@RequestMapping(value ="/download",method = RequestMethod.GET)  
-//    public ResponseEntity<byte[]> export() throws IOException {       
-//        File file = new File(filePath+"123.pdf");
-//        return new ResponseEntity<byte[]>(FileUtils.readFileToByteArray(file),getDownloadHeaders("SmartHunter.rar"), HttpStatus.CREATED);    
-//    }
+    @SuppressWarnings("unchecked")
+	@RequestMapping(value = "/uploadApp",method = RequestMethod.POST)
+    public ObjectRestResponse<AppSetting> uploadApp(@RequestParam("file") MultipartFile file
+    		,@RequestParam("id") Integer id) {
+    	return new ObjectRestResponse<AppSetting>().data(appSettingBiz.uploadApp(file, id));
+    }
     
     @GetMapping("/download")
-    public ResponseEntity<Resource> downloadFile(HttpServletRequest request) throws UnsupportedEncodingException {
+    public ResponseEntity<Resource> downloadFile(@RequestParam("id") Integer id,HttpServletRequest request) throws UnsupportedEncodingException {
         // Load file as Resource
         Resource resource = fileStorageService.loadFileAsResource("123.txt");
 

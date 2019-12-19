@@ -11,9 +11,12 @@ import com.golf.model.request.JwtAuthenticationRequest;
 import com.golf.model.response.ObjectRestResponse;
 import com.golf.service.AuthService;
 
+import springfox.documentation.annotations.ApiIgnore;
+
 
 @RestController
 @RequestMapping("jwt")
+@ApiIgnore
 public class AuthenController {
 	
 	@Autowired

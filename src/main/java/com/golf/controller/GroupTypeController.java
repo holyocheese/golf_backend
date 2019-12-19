@@ -7,9 +7,12 @@ import com.golf.anno.IgnoreClientToken;
 import com.golf.base.biz.GroupTypeBiz;
 import com.golf.common.BaseController;
 import com.golf.dao.entity.GroupType;
+
+import springfox.documentation.annotations.ApiIgnore;
 @IgnoreClientToken
 @Controller
 @RequestMapping("groupType")
+@ApiIgnore
 public class GroupTypeController extends BaseController<GroupTypeBiz,GroupType> {
 //
 //    @RequestMapping(value = "/page",method = RequestMethod.GET)

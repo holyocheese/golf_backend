@@ -13,6 +13,8 @@ import org.springframework.web.client.RestTemplate;
 
 import com.golf.config.FileStorageProperties;
 
+import springfox.documentation.swagger2.annotations.EnableSwagger2;
+
 @EnableDiscoveryClient
 @SpringBootApplication
 @EnableCircuitBreaker
@@ -22,6 +24,7 @@ import com.golf.config.FileStorageProperties;
 @EnableConfigurationProperties({
     FileStorageProperties.class
 })
+@EnableSwagger2
 public class App {
 	public static void main(String[] args) {
         SpringApplication.run(App.class, args);

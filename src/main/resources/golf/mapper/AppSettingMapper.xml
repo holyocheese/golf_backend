@@ -14,6 +14,7 @@
     <result column="update_message" property="updateMessage" jdbcType="VARCHAR" />
     <result column="extend" property="extend" jdbcType="VARCHAR" />
     <result column="effective_time" property="effectiveTime" jdbcType="TIMESTAMP" />
+    <result column="file_name" property="fileName" jdbcType="VARCHAR" />
     <result column="tenant_id" property="tenantId" jdbcType="VARCHAR" />
     <result column="create_time" property="createTime" jdbcType="TIMESTAMP" />
     <result column="update_time" property="updateTime" jdbcType="TIMESTAMP" />

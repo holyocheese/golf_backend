@@ -15,6 +15,8 @@ import com.golf.common.BaseController;
 import com.golf.model.response.UploadFileResponse;
 import com.golf.service.FileStorageService;
 
+import springfox.documentation.annotations.ApiIgnore;
+
 import javax.servlet.http.HttpServletRequest;
 import java.io.IOException;
 import java.io.UnsupportedEncodingException;
@@ -25,6 +27,7 @@ import java.util.stream.Collectors;
 
 @RestController
 @RequestMapping("file")
+@ApiIgnore
 public class FileController {
 
     private static final Logger logger = LoggerFactory.getLogger(FileController.class);

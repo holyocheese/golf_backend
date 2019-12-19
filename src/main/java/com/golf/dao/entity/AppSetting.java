@@ -43,6 +43,12 @@ public class AppSetting {
     @Column(name = "effective_time")
     private Date effectiveTime;
 
+    /**
+     * 文件名 对应安装包名称
+     */
+    @Column(name = "file_name")
+    private String fileName;
+
     @Column(name = "tenant_id")
     private String tenantId;
 
@@ -214,6 +220,24 @@ public class AppSetting {
      */
     public void setEffectiveTime(Date effectiveTime) {
         this.effectiveTime = effectiveTime;
+    }
+
+    /**
+     * 获取文件名 对应安装包名称
+     *
+     * @return file_name - 文件名 对应安装包名称
+     */
+    public String getFileName() {
+        return fileName;
+    }
+
+    /**
+     * 设置文件名 对应安装包名称
+     *
+     * @param fileName 文件名 对应安装包名称
+     */
+    public void setFileName(String fileName) {
+        this.fileName = fileName;
     }
 
     /**

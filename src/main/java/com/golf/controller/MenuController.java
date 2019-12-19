@@ -21,11 +21,13 @@ import com.golf.model.vo.AuthorityMenuTree;
 import com.golf.model.vo.MenuTree;
 import com.golf.util.TreeUtil;
 
+import springfox.documentation.annotations.ApiIgnore;
 import tk.mybatis.mapper.entity.Example;
 
 @IgnoreClientToken
 @Controller
 @RequestMapping("menu")
+@ApiIgnore
 public class MenuController extends BaseController<MenuBiz, Menu> {
     @Autowired
     private UserBiz userBiz;

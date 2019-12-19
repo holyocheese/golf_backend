@@ -4,6 +4,8 @@ import java.util.ArrayList;
 import java.util.List;
 
 import io.swagger.annotations.*;
+import springfox.documentation.annotations.ApiIgnore;
+
 import org.apache.commons.lang3.StringUtils;
 import org.springframework.beans.BeanUtils;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -31,7 +33,7 @@ import tk.mybatis.mapper.entity.Example;
 @IgnoreClientToken
 @Controller
 @RequestMapping("group")
-@Api("群组模块")
+@ApiIgnore
 public class GroupController extends BaseController<GroupBiz, Group> {
     @Autowired
     private ResourceAuthorityBiz resourceAuthorityBiz;

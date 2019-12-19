@@ -18,10 +18,12 @@ import com.golf.dao.entity.Element;
 import com.golf.model.response.ObjectRestResponse;
 import com.golf.model.response.TableResultResponse;
 
+import springfox.documentation.annotations.ApiIgnore;
 import tk.mybatis.mapper.entity.Example;
 @IgnoreClientToken
 @Controller
 @RequestMapping("element")
+@ApiIgnore
 public class ElementController extends BaseController<ElementBiz, Element> {
   @Autowired
   private UserBiz userBiz;

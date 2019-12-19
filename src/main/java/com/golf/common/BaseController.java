@@ -23,7 +23,7 @@ import com.golf.model.response.TableResultResponse;
 import com.golf.util.Query;
 
 import io.swagger.annotations.ApiOperation;
-
+import springfox.documentation.annotations.ApiIgnore;
 
 public class BaseController<Biz extends BaseBiz,Entity> {
     @Autowired
@@ -33,6 +33,7 @@ public class BaseController<Biz extends BaseBiz,Entity> {
     @ApiOperation(value = "新增数据", notes = "新增数据")
     @RequestMapping(value = "",method = RequestMethod.POST)
     @ResponseBody
+    @ApiIgnore
     public ObjectRestResponse<Entity> add(@RequestBody Entity entity){
         baseBiz.insertSelective(entity);
         return new ObjectRestResponse<Entity>();
@@ -49,6 +50,7 @@ public class BaseController<Biz extends BaseBiz,Entity> {
     @ApiOperation(value = "根据id更新数据", notes = "根据id更新数据")
     @RequestMapping(value = "/{id}",method = RequestMethod.PUT)
     @ResponseBody
+    @ApiIgnore
     public ObjectRestResponse<Entity> update(@RequestBody Entity entity){
         baseBiz.updateSelectiveById(entity);
         return new ObjectRestResponse<Entity>();
@@ -56,6 +58,7 @@ public class BaseController<Biz extends BaseBiz,Entity> {
     @ApiOperation(value = "根据id删除数据", notes = "根据id删除数据")
     @RequestMapping(value = "/{id}",method = RequestMethod.DELETE)
     @ResponseBody
+    @ApiIgnore
     public ObjectRestResponse<Entity> remove(@PathVariable int id){
         baseBiz.deleteById(id);
         return new ObjectRestResponse<Entity>();
@@ -63,12 +66,14 @@ public class BaseController<Biz extends BaseBiz,Entity> {
     @ApiOperation(value = "all列表", notes = "all列表")
     @RequestMapping(value = "/all",method = RequestMethod.GET)
     @ResponseBody
+    @ApiIgnore
     public List<Entity> all(){
         return baseBiz.selectListAll();
     }
     @ApiOperation(value = "分页列表", notes = "分页列表")
     @RequestMapping(value = "/page",method = RequestMethod.GET)
     @ResponseBody
+    @ApiIgnore
     public TableResultResponse<Entity> list(@RequestParam Map<String, Object> params){
         //查询列表数据
         Query query = new Query(params);
@@ -77,6 +82,7 @@ public class BaseController<Biz extends BaseBiz,Entity> {
     @ApiOperation(value = "分页列表(精确查询)", notes = "分页列表(精确查询)")
     @RequestMapping(value = "/pageEqual",method = RequestMethod.GET)
     @ResponseBody
+    @ApiIgnore
     public TableResultResponse<Entity> listEqual(@RequestParam Map<String, Object> params){
         //查询列表数据
         Query query = new Query(params);
