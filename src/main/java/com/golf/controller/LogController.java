@@ -116,9 +116,9 @@ public class LogController {
         return result;
     }
 	
-	@RequestMapping(value = "/downloadByPath",method = RequestMethod.GET)
+	@RequestMapping(value = "/downloadByLevel",method = RequestMethod.GET)
     @ResponseBody
-    public ResponseEntity<FileSystemResource> export(@RequestParam(value="path",required=false)String path) {
+    public ResponseEntity<FileSystemResource> export(@RequestParam(value="level",required=true)String level) {
 		HttpHeaders headers = new HttpHeaders();
         headers.add("Cache-Control", "no-cache, no-store, must-revalidate");
         headers.add("Content-Disposition", "attachment; filename=日志.txt");
@@ -126,15 +126,8 @@ public class LogController {
         headers.add("Expires", "0");
         headers.add("Last-Modified", new Date().toString());
         headers.add("ETag", String.valueOf(System.currentTimeMillis()));
-        File file = null;
-		if(path.indexOf(".log")<0){
-			return ResponseEntity
-					.status(HttpStatus.BAD_REQUEST)
-	                .headers(headers)
-	                .contentType(MediaType.parseMediaType("application/octet-stream"))
-	                .body(new FileSystemResource(file));
-		}
-		file = new File(path);
+		String fileName = "ewheel-admin-" + level + ".log";		
+        File file =  new File(path+fileName);
         if (!file.canExecute()) {
         	return ResponseEntity
 					.status(HttpStatus.BAD_REQUEST)
