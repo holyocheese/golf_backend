@@ -36,8 +36,7 @@ public class LogController {
 	//根据服务&日志等级读取日志
 	@RequestMapping(value = "/logger",method = RequestMethod.GET)
     @ResponseBody
-    public Map<String, Object> select(@RequestParam(value="name")String name,
-    		@RequestParam(value="lineCount",required=false)Integer lineCount,
+    public Map<String, Object> select(@RequestParam(value="lineCount",required=false)Integer lineCount,
     		@RequestParam(value="level")String level,
     		@RequestParam(value="lastReadLine" ,required=false)Integer lastReadLine){
 		Map<String, Object> result = new HashMap<String, Object>();
@@ -45,8 +44,9 @@ public class LogController {
 		result.put("message", MessageCodeConstant.MESSAGE_OK);
 		File f = null;
 		String resultStr = "";
+		String fileName = "ewheel-admin-" + level + ".log";
 		try{
-			f = new File(path);
+			f = new File(path+fileName);
 			int totalCount = getTotalLines(f);
 			if(lastReadLine!=null&&totalCount==lastReadLine){
 				result.put("lineTotal",totalCount);
@@ -66,7 +66,7 @@ public class LogController {
 					}
 				}
 			}
-			result.put("lineTotal",totalCount);
+ 			result.put("lineTotal",totalCount);
 			result.put("data",resultStr);
 		}catch (Exception e) {
 			result.put("status", MessageCodeConstant.SERVER_500);
@@ -121,7 +121,7 @@ public class LogController {
     public ResponseEntity<FileSystemResource> export(@RequestParam(value="path",required=false)String path) {
 		HttpHeaders headers = new HttpHeaders();
         headers.add("Cache-Control", "no-cache, no-store, must-revalidate");
-        headers.add("Content-Disposition", "attachment; filename=" + System.currentTimeMillis() + ".xls");
+        headers.add("Content-Disposition", "attachment; filename=日志.txt");
         headers.add("Pragma", "no-cache");
         headers.add("Expires", "0");
         headers.add("Last-Modified", new Date().toString());
@@ -175,7 +175,7 @@ public class LogController {
         	in = new FileReader(sourceFile);
         	reader = new LineNumberReader(in);
         	String s = "";
-            if (lineNumber <= 0 || lineNumber > totalLine) {
+            if (lineNumber > totalLine) {
                 return s;
             }
             int lines = 0;
