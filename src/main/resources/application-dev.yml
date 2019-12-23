@@ -30,6 +30,7 @@ eureka:
 path:
   appPath: D:\cheese java\golf_data\app\
   firmwarePath: D:\cheese java\golf_data\firmware\
+  log: D:\cheese java\golf_data\log\
 
 
 #####################################################################################################
