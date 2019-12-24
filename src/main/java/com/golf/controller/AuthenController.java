@@ -11,18 +11,19 @@ import com.golf.model.request.JwtAuthenticationRequest;
 import com.golf.model.response.ObjectRestResponse;
 import com.golf.service.AuthService;
 
+import io.swagger.annotations.ApiOperation;
 import springfox.documentation.annotations.ApiIgnore;
 
 
 @RestController
 @RequestMapping("jwt")
-@ApiIgnore
 public class AuthenController {
 	
 	@Autowired
 	private AuthService authService;
 
 	@RequestMapping(value = "token", method = RequestMethod.POST)
+	@ApiOperation(value = "用户名密码获取token", notes = "用户名密码获取token")
     public ObjectRestResponse<String> createAuthenticationToken(
             @RequestBody JwtAuthenticationRequest authenticationRequest) throws Exception {
         try{
