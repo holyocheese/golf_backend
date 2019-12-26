@@ -25,7 +25,7 @@ public class AuthenController {
 	private AuthService authService;
 
 	@RequestMapping(value = "token", method = RequestMethod.POST)
-	@ApiOperation(value = "用户名密码获取token", notes = "用户名密码获取token 有效时间2小时\n "
+	@ApiOperation(value = "用户名密码获取token", notes = "用户名密码获取token 有效时间4小时\n "
 			+ "请求头增加 Authorization: token 来获取访问其他接口的权限")
     public ObjectRestResponse<String> createAuthenticationToken(
             @RequestBody JwtAuthenticationRequest authenticationRequest) throws Exception {
