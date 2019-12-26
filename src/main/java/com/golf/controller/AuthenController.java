@@ -11,19 +11,22 @@ import com.golf.model.request.JwtAuthenticationRequest;
 import com.golf.model.response.ObjectRestResponse;
 import com.golf.service.AuthService;
 
+import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;
 import springfox.documentation.annotations.ApiIgnore;
 
 
 @RestController
 @RequestMapping("jwt")
+@Api(value="获取token相关接口",tags={"获取接口权限token相关接口"})
 public class AuthenController {
 	
 	@Autowired
 	private AuthService authService;
 
 	@RequestMapping(value = "token", method = RequestMethod.POST)
-	@ApiOperation(value = "用户名密码获取token", notes = "用户名密码获取token")
+	@ApiOperation(value = "用户名密码获取token", notes = "用户名密码获取token 有效时间2小时\n "
+			+ "请求头增加 Authorization: token 来获取访问其他接口的权限")
     public ObjectRestResponse<String> createAuthenticationToken(
             @RequestBody JwtAuthenticationRequest authenticationRequest) throws Exception {
         try{
