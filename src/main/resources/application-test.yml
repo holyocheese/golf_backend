@@ -29,7 +29,7 @@ eureka:
       
 path:
   appPath: /etc/ewheel/data/app/
-  firmwarePath: /etc/ewheel/data//firmware/
+  firmwarePath: /etc/ewheel/data/firmware/
   log: /var/lib/jenkins/workspace/log/
 
 
