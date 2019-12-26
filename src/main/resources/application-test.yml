@@ -28,8 +28,8 @@ eureka:
       defaultZone: http://localhost:9000/eureka/
       
 path:
-  appPath: /root/ewheel/data/app/
-  firmwarePath: /root/ewheel/data/firmware/
+  appPath: /etc/ewheel/data//app/
+  firmwarePath: /etc/ewheel/data//firmware/
   log: /var/lib/jenkins/workspace/log/
 
 
