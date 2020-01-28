@@ -31,6 +31,10 @@ path:
   appPath: /etc/ewheel/data/app/
   firmwarePath: /etc/ewheel/data/firmware/
   log: /var/lib/jenkins/workspace/log/
+  
+server:
+  tomcat:
+    basedir: /etc/ewheel/data/app/temp
 
 
 #####################################################################################################
