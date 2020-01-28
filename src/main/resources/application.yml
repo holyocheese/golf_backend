@@ -32,7 +32,11 @@ spring:
       enabled: true
       http:
         legacy:
-          enabled: true
+          enabled: true  
+  http:
+    multipart:
+      max-file-size: 100Mb
+      max-request-size: 100Mb
 logging:
     level:
         com.golf: DEBUG
