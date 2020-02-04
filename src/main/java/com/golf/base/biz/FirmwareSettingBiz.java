@@ -32,7 +32,7 @@ public class FirmwareSettingBiz extends BaseBiz<FirmwareSettingMapper,FirmwareSe
 	
 	public FirmwareSetting getLastest(){
 		Example example = new Example(FirmwareSetting.class);
-		example.orderBy("id desc");
+		example.setOrderByClause("id desc");
 		List<FirmwareSetting> as = mapper.selectByExample(example);
 		return CollectionUtils.isEmpty(as)?null:as.get(0);
 	}
