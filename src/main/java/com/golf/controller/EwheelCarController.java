@@ -56,7 +56,7 @@ public class EwheelCarController{
     @ApiOperation(value = "初始化小车密码", notes = "初始化小车密码")
     @RequestMapping(value = "/initPassword",method = RequestMethod.POST)
     @ResponseBody
-    public ObjectRestResponse<String> get(@RequestBody EwheelCarPassVo entity){
+    public ObjectRestResponse<String> get(@RequestBody EwheelCarVo entity){
     	ObjectRestResponse<String> entityObjectRestResponse = new ObjectRestResponse<>();
     	if(entity==null){
     		entityObjectRestResponse.setData(null);
