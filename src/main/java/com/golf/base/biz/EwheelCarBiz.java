@@ -22,9 +22,10 @@ public class EwheelCarBiz extends BaseBiz<EwheelCarMapper,EwheelCar>{
 		if(entity.getExtAnswer1().equals(ewheelCar.getExtAnswer1())&&
 				entity.getExtQuestion1().equals(ewheelCar.getExtQuestion1())){
 			return ewheelCar.getInitialPassword();
+		}else if(!entity.getExtQuestion1().equals(ewheelCar.getExtQuestion1())){
+			throw new BaseException("问题不正确",400);	
 		}else{
-			throw new BaseException("问题答案不正确",400);
-			
+			throw new BaseException("答案不正确",400);
 		}
 	}
 	
