@@ -20,6 +20,8 @@ spring:
 
 server:
   port: 9091
+  tomcat:
+    basedir: /etc/ewheel/data/app/temp
 
 
 eureka:
@@ -31,7 +33,6 @@ path:
   appPath: /etc/ewheel/data/app/
   firmwarePath: /etc/ewheel/data/firmware/
   log: /var/lib/jenkins/workspace/log/
-
 
 #####################################################################################################
 #spring boot health config

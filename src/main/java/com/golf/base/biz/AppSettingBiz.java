@@ -33,8 +33,8 @@ public class AppSettingBiz extends BaseBiz<AppSettingMapper,AppSetting>{
 	public AppSetting getLastest(Integer type){
 		Example example = new Example(AppSetting.class);
 		Example.Criteria criteria = example.createCriteria();
-		example.orderBy("id desc");
 		criteria.andEqualTo("type", type);
+		example.setOrderByClause("id desc");
 		List<AppSetting> as = mapper.selectByExample(example);
 		return CollectionUtils.isEmpty(as)?null:as.get(0);
 	}
