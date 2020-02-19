@@ -17,15 +17,15 @@ public class EwheelCarBiz extends BaseBiz<EwheelCarMapper,EwheelCar>{
 	public String initPass(EwheelCarVo entity){
 		EwheelCar ewheelCar = super.selectById(entity.getCarId());
 		if(ewheelCar==null){
-			throw new BaseException("小车不存在",400);
+			throw new BaseException("car does not exist",400);
 		}
 		if(entity.getExtAnswer1().equals(ewheelCar.getExtAnswer1())&&
 				entity.getExtQuestion1().equals(ewheelCar.getExtQuestion1())){
 			return ewheelCar.getInitialPassword();
 		}else if(!entity.getExtQuestion1().equals(ewheelCar.getExtQuestion1())){
-			throw new BaseException("问题不正确",400);	
+			throw new BaseException("wrong question",400);	
 		}else{
-			throw new BaseException("答案不正确",400);
+			throw new BaseException("wrong answer",400);
 		}
 	}
 	

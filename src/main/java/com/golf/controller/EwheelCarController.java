@@ -76,7 +76,9 @@ public class EwheelCarController{
     		entityObjectRestResponse.setStatus(400);
     		return entityObjectRestResponse;
     	}
-    	entityObjectRestResponse.data(baseBiz.initPass(entity));
+    	entityObjectRestResponse.setData(baseBiz.initPass(entity));
+		entityObjectRestResponse.setMessage("OK");
+		entityObjectRestResponse.setStatus(200);
         return entityObjectRestResponse;
     }
 }
