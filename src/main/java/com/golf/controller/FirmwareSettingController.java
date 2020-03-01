@@ -2,6 +2,7 @@ package com.golf.controller;
 
 import java.io.IOException;
 import java.io.UnsupportedEncodingException;
+import java.util.Map;
 
 import javax.servlet.http.HttpServletRequest;
 
@@ -14,6 +15,7 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.multipart.MultipartFile;
 
@@ -21,7 +23,9 @@ import com.golf.base.biz.FirmwareSettingBiz;
 import com.golf.common.BaseController;
 import com.golf.dao.entity.FirmwareSetting;
 import com.golf.model.response.ObjectRestResponse;
+import com.golf.model.response.TableResultResponse;
 import com.golf.service.FileStorageService4Firmware;
+import com.golf.util.Query;
 
 import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;
@@ -37,6 +41,17 @@ public class FirmwareSettingController extends BaseController<FirmwareSettingBiz
 	
 	@Autowired
     private FirmwareSettingBiz firmwareSettingBiz;
+	
+    @ApiOperation(value = "分页列表", notes = "分页列表")
+    @RequestMapping(value = "/page",method = RequestMethod.GET)
+    @ResponseBody
+    @ApiIgnore
+    @Override
+    public TableResultResponse<FirmwareSetting> list(@RequestParam Map<String, Object> params){
+        //查询列表数据
+        Query query = new Query(params);
+        return baseBiz.selectByIdDescQuery(query);
+    }
 	
 	@SuppressWarnings("unchecked")
 	@RequestMapping(value = "/getLastest",method = RequestMethod.GET)

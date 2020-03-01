@@ -2,6 +2,7 @@ package com.golf.controller;
 
 import java.io.IOException;
 import java.io.UnsupportedEncodingException;
+import java.util.Map;
 
 import javax.servlet.http.HttpServletRequest;
 
@@ -15,6 +16,7 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.multipart.MultipartFile;
 
@@ -22,7 +24,9 @@ import com.golf.base.biz.AppSettingBiz;
 import com.golf.common.BaseController;
 import com.golf.dao.entity.AppSetting;
 import com.golf.model.response.ObjectRestResponse;
+import com.golf.model.response.TableResultResponse;
 import com.golf.service.FileStorageService;
+import com.golf.util.Query;
 
 import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;
@@ -42,17 +46,31 @@ public class AppSettingController extends BaseController<AppSettingBiz,AppSettin
 	@Autowired
     private AppSettingBiz appSettingBiz;
 	
+    @ApiOperation(value = "分页列表", notes = "分页列表")
+    @RequestMapping(value = "/page",method = RequestMethod.GET)
+    @ResponseBody
+    @ApiIgnore
+    @Override
+    public TableResultResponse<AppSetting> list(@RequestParam Map<String, Object> params){
+        //查询列表数据
+        Query query = new Query(params);
+        return baseBiz.selectByIdDescQuery(query);
+    }
+	
 	@RequestMapping(value = "/getLastest",method = RequestMethod.GET)
     @ApiOperation(value = "根据客户端类型来查询最新版本", notes = "手机系统类型：1、安卓 2、IOS")
     public ObjectRestResponse<AppSetting> getLastest(@RequestParam("type") Integer type) {
+		ObjectRestResponse<AppSetting> result =  new ObjectRestResponse<AppSetting>();
 		if(type>2){
-			ObjectRestResponse<AppSetting> result =  new ObjectRestResponse<AppSetting>();
 			result.setData(null);
-			result.setMessage("客户端类型不存在");
+			result.setMessage("wrong client");
 			result.setStatus(400);
 			return result;
 		}
-    	return new ObjectRestResponse<AppSetting>().data(appSettingBiz.getLastest(type));
+		result.setData(appSettingBiz.getLastest(type));
+		result.setMessage("OK");
+		result.setStatus(200);
+    	return result;
     }
 	
     @SuppressWarnings("unchecked")
@@ -60,7 +78,11 @@ public class AppSettingController extends BaseController<AppSettingBiz,AppSettin
     @ApiIgnore
     public ObjectRestResponse<AppSetting> uploadApp(@RequestParam("file") MultipartFile file
     		,@RequestParam("id") Integer id) {
-    	return new ObjectRestResponse<AppSetting>().data(appSettingBiz.uploadApp(file, id));
+    	ObjectRestResponse<AppSetting> result =  new ObjectRestResponse<AppSetting>();
+		result.setData(appSettingBiz.uploadApp(file, id));
+		result.setMessage("OK");
+		result.setStatus(200);
+    	return result;
     }
     
     @GetMapping("/download")
