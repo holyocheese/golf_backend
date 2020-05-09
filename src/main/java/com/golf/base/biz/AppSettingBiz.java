@@ -24,6 +24,14 @@ public class AppSettingBiz extends BaseBiz<AppSettingMapper,AppSetting>{
     
 	public AppSetting uploadApp(MultipartFile file,Integer id){
 		AppSetting as = mapper.selectByPrimaryKey(id);
+		//如果是安卓最新版上传 复制一份到Ewheel_lastest.apk 
+		if(as.getType()==1){
+			AppSetting lastestAndroid = getLastest(1);
+			if(lastestAndroid.getId()==id){
+				//保存一份为最新apk
+				fileStorageService.storeFile(file, "Ewheel_lastest.apk");
+			}
+		}
 		String fileName = fileStorageService.storeFile(file, as.getName()+"_"+as.getType()+"_"+as.getVersion()+"_"+as.getId()+".apk");
 		as.setFileName(fileName);
 		mapper.updateByPrimaryKeySelective(as);
