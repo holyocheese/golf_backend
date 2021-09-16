@@ -37,9 +37,6 @@ import springfox.documentation.annotations.ApiIgnore;
 @Api(value="app版本相关接口",tags={"app版本相关接口"})
 public class AppSettingController extends BaseController<AppSettingBiz,AppSetting>{
 	
-	@Value("${path.appPath}")
-	private String filePath;
-	
 	@Autowired
     private FileStorageService fileStorageService;
 	

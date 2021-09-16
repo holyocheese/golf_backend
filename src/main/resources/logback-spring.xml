@@ -4,7 +4,7 @@
 
 	<springProperty name="appName" source="spring.application.name"/>
 
-	<property name="LOG_PATH" value="/var/lib/jenkins/workspace/log"/>
+	<property name="LOG_PATH" value="/root/app/log"/>
 	<!-- 控制台输出 -->
 	<appender name="CONSOLE" class="ch.qos.logback.core.ConsoleAppender">
 		<encoder>
@@ -102,7 +102,7 @@
 		<appender-ref ref="ERROR_FILE" />
 	</root>
 
-	<springProfile name="dev,test">
+	<springProfile name="dev">
 		<logger name="com.golf.dao.mapper" level="debug" additivity="false">
 			<appender-ref ref="CONSOLE" />
 			<appender-ref ref="DEBUG_FILE" />

@@ -2,6 +2,7 @@ package com.golf.base.biz;
 
 import java.util.List;
 
+import com.golf.constant.AppTypeConstant;
 import org.apache.commons.collections.CollectionUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -24,16 +25,24 @@ public class AppSettingBiz extends BaseBiz<AppSettingMapper,AppSetting>{
     
 	public AppSetting uploadApp(MultipartFile file,Integer id){
 		AppSetting as = mapper.selectByPrimaryKey(id);
-		//如果是安卓最新版上传 复制一份到Ewheel_lastest.apk 
-		if(as.getType()==1){
-			AppSetting lastestAndroid = getLastest(1);
+		if(as.getType()== AppTypeConstant.ANDROID){//如果是安卓最新版上传 复制一份到Ewheel_lastest.apk
+			AppSetting lastestAndroid = getLastest(AppTypeConstant.ANDROID);
 			if(lastestAndroid.getId()==id){
 				//保存一份为最新apk
 				fileStorageService.storeFile(file, "Ewheel_lastest.apk");
 			}
+			String fileName = fileStorageService.storeFile(file, as.getName()+"_"+as.getType()+"_"+as.getVersion()+"_"+as.getId()+".apk");
+			as.setFileName(fileName);
 		}
-		String fileName = fileStorageService.storeFile(file, as.getName()+"_"+as.getType()+"_"+as.getVersion()+"_"+as.getId()+".apk");
-		as.setFileName(fileName);
+		if(as.getType()== AppTypeConstant.WINDOW){//如果是windows最新版上传 复制一份到Ewheel_lastest.exe
+			AppSetting lastestWindows = getLastest(AppTypeConstant.WINDOW);
+			if(lastestWindows.getId()==id){
+				//保存一份最新
+				fileStorageService.storeFile(file, "Ewheel_lastestversion.exe");
+			}
+			String fileName = fileStorageService.storeFile(file, as.getName()+"_"+as.getType()+"_"+as.getVersion()+"_"+as.getId()+".exe");
+			as.setFileName(fileName);
+		}
 		mapper.updateByPrimaryKeySelective(as);
 		return as;
 	}
