@@ -16,8 +16,7 @@ import java.security.spec.X509EncodedKeySpec;
 import java.util.HashMap;
 import java.util.Map;
 
-import sun.misc.BASE64Decoder;
-import sun.misc.BASE64Encoder;
+import java.util.Base64;
 
 public class RsaKeyHelper {
     /**
@@ -150,13 +149,12 @@ public class RsaKeyHelper {
     }
 
     public static String toHexString(byte[] b) {
-        return (new BASE64Encoder()).encodeBuffer(b);
+        return Base64.getEncoder().encodeToString(b);
     }
 
     public static final byte[] toBytes(String s) throws IOException {
-        return (new BASE64Decoder()).decodeBuffer(s);
+        return Base64.getDecoder().decode(s);
     }
-
     public static void main(String[] args) throws NoSuchAlgorithmException {
         KeyPairGenerator keyPairGenerator = KeyPairGenerator.getInstance("RSA");
         SecureRandom secureRandom = new SecureRandom("123".getBytes());
