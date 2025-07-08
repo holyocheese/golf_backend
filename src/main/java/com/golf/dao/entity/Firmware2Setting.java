@@ -27,6 +27,12 @@ public class Firmware2Setting {
     @Column(name = "need_update")
     private Integer needUpdate;
 
+    /**
+     * 小车型号/版本
+     */
+    @Column(name = "car_version_id")
+    private Integer carVersionId;
+
     @Column(name = "update_message")
     private String updateMessage;
 
@@ -142,6 +148,24 @@ public class Firmware2Setting {
      */
     public void setNeedUpdate(Integer needUpdate) {
         this.needUpdate = needUpdate;
+    }
+
+    /**
+     * 获取小车型号/版本
+     *
+     * @return car_version_id - 小车型号/版本
+     */
+    public Integer getCarVersionId() {
+        return carVersionId;
+    }
+
+    /**
+     * 设置小车型号/版本
+     *
+     * @param carVersionId 小车型号/版本
+     */
+    public void setCarVersionId(Integer carVersionId) {
+        this.carVersionId = carVersionId;
     }
 
     /**

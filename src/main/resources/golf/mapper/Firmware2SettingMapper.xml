@@ -1,21 +1,22 @@
-<?xml version="1.0" encoding="UTF-8" ?>
-<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
-<mapper namespace="com.golf.dao.mapper.Firmware2SettingMapper" >
-  <resultMap id="BaseResultMap" type="com.golf.dao.entity.Firmware2Setting" >
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.golf.dao.mapper.Firmware2SettingMapper">
+  <resultMap id="BaseResultMap" type="com.golf.dao.entity.Firmware2Setting">
     <!--
       WARNING - @mbg.generated
     -->
-    <id column="id" property="id" jdbcType="INTEGER" />
-    <result column="name" property="name" jdbcType="VARCHAR" />
-    <result column="version" property="version" jdbcType="VARCHAR" />
-    <result column="force_update" property="forceUpdate" jdbcType="INTEGER" />
-    <result column="need_update" property="needUpdate" jdbcType="INTEGER" />
-    <result column="update_message" property="updateMessage" jdbcType="VARCHAR" />
-    <result column="extend" property="extend" jdbcType="VARCHAR" />
-    <result column="file_name" property="fileName" jdbcType="VARCHAR" />
-    <result column="create_time" property="createTime" jdbcType="TIMESTAMP" />
-    <result column="update_time" property="updateTime" jdbcType="TIMESTAMP" />
-    <result column="create_id" property="createId" jdbcType="VARCHAR" />
-    <result column="update_id" property="updateId" jdbcType="VARCHAR" />
+    <id column="id" jdbcType="INTEGER" property="id" />
+    <result column="name" jdbcType="VARCHAR" property="name" />
+    <result column="version" jdbcType="VARCHAR" property="version" />
+    <result column="force_update" jdbcType="INTEGER" property="forceUpdate" />
+    <result column="need_update" jdbcType="INTEGER" property="needUpdate" />
+    <result column="car_version_id" jdbcType="INTEGER" property="carVersionId" />
+    <result column="update_message" jdbcType="VARCHAR" property="updateMessage" />
+    <result column="extend" jdbcType="VARCHAR" property="extend" />
+    <result column="file_name" jdbcType="VARCHAR" property="fileName" />
+    <result column="create_time" jdbcType="TIMESTAMP" property="createTime" />
+    <result column="update_time" jdbcType="TIMESTAMP" property="updateTime" />
+    <result column="create_id" jdbcType="VARCHAR" property="createId" />
+    <result column="update_id" jdbcType="VARCHAR" property="updateId" />
   </resultMap>
 </mapper>
