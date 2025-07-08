@@ -55,9 +55,9 @@ public class Firmware2SettingController extends BaseController<Firmware2SettingB
 	
 	@SuppressWarnings("unchecked")
 	@RequestMapping(value = "/getLastest",method = RequestMethod.GET)
-    @ApiOperation(value = "查询固件2最新版本", notes = "查询固件2最新版本")
-    public ObjectRestResponse<Firmware2Setting> getLastest() {
-    	return new ObjectRestResponse<Firmware2Setting>().data(Firmware2SettingBiz.getLastest());
+    @ApiOperation(value = "查询固件2最新版本", notes = "查询固件2最新版本，可根据车型版本筛选")
+    public ObjectRestResponse<Firmware2Setting> getLastest(@RequestParam(value = "carVersionId") Integer carVersionId) {
+        return new ObjectRestResponse<Firmware2Setting>().data(Firmware2SettingBiz.getLastestByCarVersion(carVersionId));
     }
 
     @SuppressWarnings("unchecked")
