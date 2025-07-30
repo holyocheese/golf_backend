@@ -66,7 +66,6 @@ public class BaseController<Biz extends BaseBiz,Entity> {
     @ApiOperation(value = "all列表", notes = "all列表")
     @RequestMapping(value = "/all",method = RequestMethod.GET)
     @ResponseBody
-    @ApiIgnore
     public List<Entity> all(){
         return baseBiz.selectListAll();
     }
